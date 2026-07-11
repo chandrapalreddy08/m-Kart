@@ -1,0 +1,81 @@
+import React, { useState, useContext } from "react";
+import { fridgeData } from "../data/fridge";
+import { Link } from "react-router-dom";
+import { SearchContext } from "../store/components/SearchContext";
+
+function FridgePage() {
+  const [selectedCompany, setSelectedCompany] = useState([]);
+  const { search } = useContext(SearchContext);
+   const [showFilter, setShowFilter] = useState(false);
+
+  const companyHandler = (clickedData) => {
+    if (selectedCompany.includes(clickedData)) {
+      setSelectedCompany(
+        selectedCompany.filter((item) => item !== clickedData)
+      );
+    } else {
+      setSelectedCompany([clickedData]);
+    }
+  };
+
+  const filteredData = fridgeData.filter((item) => {
+    const companyFilter =
+      selectedCompany.length === 0 ||
+      selectedCompany.includes(item.brand);
+
+    const searchFilter =
+      item.product.toLowerCase().includes(search.toLowerCase()) ||
+      item.brand.toLowerCase().includes(search.toLowerCase()) ||
+      item.model.toLowerCase().includes(search.toLowerCase()) ||
+      item.category.toLowerCase().includes(search.toLowerCase());
+
+    return companyFilter && searchFilter;
+  });
+
+  return (
+    <>
+      {/* <h2 className="section-title">Fridges</h2> */}
+       <button className="filterBtn" onClick={()=>setShowFilter(true)}>☰ Filters</button>
+
+      <div className="pageSection-parent">
+
+        {/* Left Side Filter */}
+       <div className={`filterSection ${showFilter ? "active" : ""} `}>
+                 <button className="closeBtn" onClick={()=>setShowFilter(false)}>
+                   ✕
+                 </button>
+          {fridgeData.map((brand) => (
+            <div className="filterItem" key={brand.id}>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCompany.includes(brand.brand)}
+                  onChange={() => companyHandler(brand.brand)}
+                />
+                <span>{brand.brand}</span>
+              </label>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Side Products */}
+        <div className="pageSection">
+          {filteredData.map((item) => (
+            <div className="pageImg" key={item.id}>
+              <Link to={`/fridges/${item.id}`} id="product-link">
+                <img src={item.image} alt={item.model} />
+              </Link>
+
+              <div className="proModel">
+                {item.brand}, {item.model}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default FridgePage;
