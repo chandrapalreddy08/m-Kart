@@ -79,7 +79,7 @@
 
 .subMenu {
     width: 100%;
-    margin-top: 75px;
+    margin-top: 77px;
     background: linear-gradient(90deg, #232526, #414345);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     border-top: 1px solid #555;
@@ -760,7 +760,7 @@
   }
 
   .banners-section {
-  margin-top: 60px;
+  margin-top: 65px;
   width: 100%;
 }
 
@@ -1290,7 +1290,6 @@ background: rgb(220, 225, 227);
     padding-bottom: 5px;
     background-color: #0f172a;
     overflow: hidden;
-    height: 70px;
     z-index: 99;
 
 
@@ -1301,11 +1300,11 @@ background: rgb(220, 225, 227);
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
   }
   .login-icon span {
     font-size: 18px;
-     margin-bottom: 5px;
+     margin-bottom: 2px;
   }
 
   #link-cart {
@@ -1313,12 +1312,12 @@ background: rgb(220, 225, 227);
     flex-direction: column;
     justify-content: center;
     align-items: center;
- margin-bottom: 5px;
+ margin-bottom: 2px;
   }
 
   #link-cart span {
     font-size: 18px;
-     margin-bottom: 5px;
+     margin-bottom: 2px;
   }
 
 
