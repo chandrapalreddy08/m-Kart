@@ -80,7 +80,7 @@
 
 .subMenu {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 60px;
     background: linear-gradient(90deg, #232526, #414345);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     border-top: 1px solid #555;
@@ -728,7 +728,7 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom:0 ;
-    padding-top:30px ;
+    padding-top:10px ;
     overflow-x: auto;
     overflow-y: hidden;
   white-space: nowrap; 
