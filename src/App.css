@@ -991,7 +991,7 @@ background: rgb(220, 225, 227);
 .closeBtn{
     position: relative;
     top: 30px;
-    left: 2px;
+    right: 2px;
     width: 28px;
     height: 28px;
     border: none;
