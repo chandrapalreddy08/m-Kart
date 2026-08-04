@@ -942,7 +942,7 @@ background: rgb(220, 225, 227);
 .filterSection {
     position: fixed;
     z-index: 1;
-    top: 105px;
+    top: 95px;
     left: 0;
     border-radius: 0;
     height: 75vh;
